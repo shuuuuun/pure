@@ -109,7 +109,7 @@ prompt_pure_preexec() {
 	prompt_pure_cmd_timestamp=$EPOCHSECONDS
 
 	# shows the current dir and executed command in the title while a process is active
-	prompt_pure_set_title 'ignore-escape' "$PWD:t: $2"
+	[[ $PURE_DISABLE_SET_TITLE ]] && $PURE_DISABLE_SET_TITLE || prompt_pure_set_title 'ignore-escape' "$PWD:t: $2"
 }
 
 # string length ignoring ansi escapes
