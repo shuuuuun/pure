@@ -220,7 +220,7 @@ prompt_pure_precmd() {
 	prompt_pure_check_git_arrows
 
 	# shows the full path in the title
-	prompt_pure_set_title 'expand-prompt' '%~'
+	[[ $PURE_DISABLE_SET_TITLE ]] && $PURE_DISABLE_SET_TITLE || prompt_pure_set_title 'expand-prompt' '%~'
 
 	# get vcs info
 	vcs_info
